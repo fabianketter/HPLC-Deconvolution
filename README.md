@@ -1,16 +1,12 @@
-# HOR-Poisoning-Simulation
+# HPLC-Deconvolution
 
-A simulation qualitatively showing potential oscillations in PGM-metal depoisoning of carbon monoxide
+A notebook for HPLC deconvolution and analysis.
 
 ## Example results
 <p align="center">
   <img src="Figures/Figure_1.png"  width="100%" />
 </p>
 
-
-Launch on MyBinder:
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fabianketter/HOR-Poisoning-Simulation/HEAD?urlpath=voila/render/simulation.ipynb)
 
 ## Installation
 
@@ -26,8 +22,8 @@ pip install -r requirements.txt
 Run the notebook locally:
 
 ```bash
-# start Jupyter and open `simulation.ipynb`
-jupyter notebook simulation.ipynb
+# start Jupyter and open `HPLC.ipynb`
+jupyter notebook HPLC.ipynb
 ```
 
 Or view interactively via MyBinder (badge above).
@@ -36,10 +32,6 @@ Or view interactively via MyBinder (badge above).
 
 If you use this software, please cite it as follows:
 
-## Citation
-
-If you use this software, please cite it as follows:
-
-> Ketter, F., & Palkovits, R. (2026). HOR-Poisoning-Simulation (Version 0.1.0). Zenodo. DOI will be added upon release
+> Ketter, F., & Palkovits, R. (2026). HPLC-Deconvolution (Version 0.1.0). Zenodo. DOI will be added upon release
 
 Also see the `CITATION.cff` file for machine-readable citation metadata.
