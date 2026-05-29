@@ -1,0 +1,8 @@
+numpy
+plotly==5.24.1
+ipywidgets
+widgetsnbextension
+jupyterlab_widgets
+ipykernel
+voila
+nest_asyncio

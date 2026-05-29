@@ -1,0 +1,13 @@
+{
+  "title": "HOR-Poisoning-Simulation",
+  "upload_type": "software",
+  "description": "Simulation of hydrogen oxidation reaction (HOR) poisoning. Computational notebook — see README.md for details.",
+  "creators": [
+    {"name": "Ketter, Fabian", "affiliation": "RWTH Aachen University"},
+    {"name": "Palkovits, Regina", "affiliation": "RWTH Aachen University"}
+  ],
+  "publication_date": "2026-05-29",
+  "license": "MIT",
+  "doi": "Will be added upon release",
+  "keywords": ["computational notebook"]
+}

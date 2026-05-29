@@ -1,0 +1,11 @@
+cff-version: "1.2.0"
+message: "If you use this software, please cite it as below."
+title: "HOR-Poisoning-Simulation"
+version: "0.1.0"
+doi: "Will be added upon release"
+authors:
+  - family-names: "Ketter"
+    given-names: "Fabian"
+  - family-names: "Palkovits"
+    given-names: "Regina"
+date-released: "2026-05-29"
