@@ -26,8 +26,6 @@ Run the notebook locally:
 jupyter notebook HPLC.ipynb
 ```
 
-Or view interactively via MyBinder (badge above).
-
 ## Citation
 
 If you use this software, please cite it as follows:
