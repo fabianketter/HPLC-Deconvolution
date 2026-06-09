@@ -22,7 +22,6 @@ pip install -r requirements.txt
 Run the notebook locally:
 
 ```bash
-# start Jupyter and open `HPLC.ipynb`
 jupyter notebook HPLC.ipynb
 ```
 
