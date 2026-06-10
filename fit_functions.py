@@ -1,5 +1,5 @@
 import numpy as np
-from scipy.special import erfcx
+from scipy.special import erfc
 
 
 def r_squared(model, x, y):
@@ -159,8 +159,13 @@ def EMG(x, h, mu, sig, tau):
         return np.full_like(x, np.nan, dtype=float)
     prefactor = h * 0.5 * tau
     exp_arg = 0.5 * tau * (2 * mu + tau * sig ** 2 - 2 * x)
+    exp_arg = np.clip(exp_arg, -500, 500)
     erfc_arg = (mu + tau * sig ** 2 - x) / (np.sqrt(2) * sig)
-    return prefactor * np.exp(exp_arg) * erfcx(erfc_arg)
+    A  = np.exp(exp_arg)
+    B = erfc(erfc_arg)
+    return prefactor * A * B
+
+
 
 
 def EMG_mirrored(x, h, mu, sig, tau):
