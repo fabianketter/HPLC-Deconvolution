@@ -1,5 +1,7 @@
 # HPLC-Deconvolution
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20644903.svg)](https://doi.org/10.5281/zenodo.20644903)
+
 Deconvolution and quantification of HPLC chromatograms using exponentially modified Gaussian (EMG) peak fitting.
 
 <p align="center">
