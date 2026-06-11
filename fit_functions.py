@@ -186,7 +186,7 @@ def EMG_mirrored(x, h, mu, sig, tau):
     return EMG(-x, h, -mu, sig, tau)
 
 
-def EMGsTailFront(x, h1, mu1, sig1, tau1, h2, mu2, sig2, tau2):
+def EMGs_tail_front(x, h1, mu1, sig1, tau1, h2, mu2, sig2, tau2):
     '''
     Calculate the sum of an exponentially modified Gaussian (EMG) function for tailing and a mirrored EMG function for fronting.
     Parameters:
@@ -209,7 +209,7 @@ def EMGsTailFront(x, h1, mu1, sig1, tau1, h2, mu2, sig2, tau2):
     tau2 : float
         The exponential parameter of the mirrored EMG function.
     Returns:
-    EMGsTailFront : np.ndarray
+    EMGs_tail_front : np.ndarray
         The sum of the tailing and fronting EMG functions at x.
     '''
     tail_emg = EMG(x, h1, mu1, sig1, tau1)
@@ -265,7 +265,7 @@ def make_constrained_EMG_mirrored(tau_coeffs, sig_coeffs):
     return constrained_EMG_mirrored
 
 
-def make_constrained_EMGsTailFront(tail_tau_coeffs, tail_sig_coeffs, front_tau_coeffs, front_sig_coeffs):
+def make_constrained_EMGs_tail_front(tail_tau_coeffs, tail_sig_coeffs, front_tau_coeffs, front_sig_coeffs):
     '''
     Create a function that models the sum of a constrained exponentially modified Gaussian (EMG) for tailing and a constrained mirrored EMG for fronting, where tau and sig are linear functions of the area under the curve h.
     Parameters:
@@ -278,18 +278,18 @@ def make_constrained_EMGsTailFront(tail_tau_coeffs, tail_sig_coeffs, front_tau_c
     front_sig_coeffs : tuple
         The coefficients for the linear function of sig for the fronting EMG.
     Returns:
-    constrained_EMGsTailFront : callable
+    constrained_EMGs_tail_front : callable
         A function that models the sum of the constrained EMG functions.
     '''
     constrained_EMG = make_constrained_EMG(tail_tau_coeffs, tail_sig_coeffs)
     constrained_EMG_mirrored = make_constrained_EMG_mirrored(front_tau_coeffs, front_sig_coeffs)
 
-    def constrained_EMGsTailFront(x, h1, mu1, h2, mu2):
+    def constrained_EMGs_tail_front(x, h1, mu1, h2, mu2):
         tail_emg = constrained_EMG(x, h1, mu1)
         front_emg = constrained_EMG_mirrored(x, h2, mu2)
         return tail_emg + front_emg
 
-    return constrained_EMGsTailFront
+    return constrained_EMGs_tail_front
 
 
 def make_sigma_constrained_EMG(sig_coeffs):
@@ -332,7 +332,7 @@ def make_sigma_constrained_EMG_mirrored(sigma_coeffs):
     return constrained_EMG_mirrored
 
 
-def make_sigma_constrained_EMGsTailFront(tail_sig_coeffs, front_sig_coeffs):
+def make_sigma_constrained_EMGs_tail_front(tail_sig_coeffs, front_sig_coeffs):
     '''
     Create a function that models the sum of a constrained exponentially modified Gaussian (EMG) for tailing and a constrained mirrored EMG for fronting, where sig is a linear function of the area under the curve h, and tau is a free parameter.
     Parameters:
@@ -341,15 +341,15 @@ def make_sigma_constrained_EMGsTailFront(tail_sig_coeffs, front_sig_coeffs):
     front_sig_coeffs : tuple
         The coefficients for the linear function of sig for the fronting EMG.
     Returns:
-    constrained_EMGsTailFront : callable
+    constrained_EMGs_tail_front : callable
         A function that models the sum of the constrained EMG functions.
      '''
     constrained_EMG = make_sigma_constrained_EMG(tail_sig_coeffs)
     constrained_EMG_mirrored = make_sigma_constrained_EMG_mirrored(front_sig_coeffs)
 
-    def constrained_EMGsTailFront(x, h1, mu1, tau1, h2, mu2, tau2):
+    def constrained_EMGs_tail_front(x, h1, mu1, tau1, h2, mu2, tau2):
         tail_emg = constrained_EMG(x, h1, mu1, tau1)
         front_emg = constrained_EMG_mirrored(x, h2, mu2, tau2)
         return tail_emg + front_emg
 
-    return constrained_EMGsTailFront
+    return constrained_EMGs_tail_front
