@@ -2,6 +2,10 @@
 
 Deconvolution and quantification of HPLC chromatograms using exponentially modified Gaussian (EMG) peak fitting.
 
+<p align="center">
+  <img src="figures/figure_1.png" width="100%" />
+</p>
+
 ## Overview
 
 This package provides tools for the quantitative analysis of HPLC data, with a focus on resolving co-eluting or asymmetric peaks. It implements exponentially modified Gaussian (EMG) functions and their mirrored variants to model tailing and fronting peak shapes, respectively. A constrained EMG approach is used where peak shape parameters (σ and τ) are modeled as linear functions of the peak area, reducing the number of free parameters and improving fit robustness.
@@ -135,9 +139,3 @@ A machine-readable `CITATION.cff` file is also included in the repository.
 ## License
 
 This project is licensed under the terms specified in the `LICENSE` file.
-
-## Example results
-
-<p align="center">
-  <img src="figures/figure_1.png" width="100%" />
-</p>
