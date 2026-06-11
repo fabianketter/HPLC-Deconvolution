@@ -28,7 +28,7 @@ The core fitting models are implemented in `fit_functions.py`:
 | `two_pseudo_voigts()` | Sum of two pseudo-Voigt functions |
 | `EMG()` | Exponentially modified Gaussian — models **tailing** peaks |
 | `EMG_mirrored()` | Mirrored EMG — models **fronting** peaks |
-| `EMGsTailFront()` | Sum of EMG + mirrored EMG for asymmetric peaks |
+| `EMGs_tail_front()` | Sum of EMG + mirrored EMG for asymmetric peaks |
 | `make_constrained_EMG()` | EMG where σ and τ are linear functions of *h* |
 | `make_sigma_constrained_EMG()` | EMG where only σ is a linear function of *h*; τ is free |
 
@@ -128,7 +128,7 @@ The `extract_chromatogram()` function in the notebook reads LabSolutions-exporte
 
 If you use this software in academic work, please cite it as:
 
-> Ketter, F., & Palkovits, R. (2026). HPLC-Deconvolution (Version 0.1.0). Zenodo. DOI will be added upon release
+> Ketter, F., & Palkovits, R. (2026). HPLC-Deconvolution (Version 1.0.0). Zenodo. DOI will be added upon release
 
 A machine-readable `CITATION.cff` file is also included in the repository.
 
@@ -139,5 +139,5 @@ This project is licensed under the terms specified in the `LICENSE` file.
 ## Example results
 
 <p align="center">
-  <img src="figures/Figure_1.png" width="100%" />
+  <img src="figures/figure_1.png" width="100%" />
 </p>
